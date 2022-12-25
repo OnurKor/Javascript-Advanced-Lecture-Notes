@@ -34,7 +34,7 @@ ekleBtn.onclick = function() {
         ul.innerHTML += `<li>${dilInput.value}</li>`;
         dilInput.value = " ";
         javascriptKontrol();
-    }
+    };
 };
 
 const javascriptKontrol = () => {
@@ -43,10 +43,10 @@ const javascriptKontrol = () => {
         if(kucukHarf === "javascript"){
             // dil.className = "red";
             //? alternatif yöntem
-            dil.setAttribute("class", "red")
-        }
+            dil.setAttribute("class", "red");
+        };
     });
-}
+};
 
 
 
