@@ -33,8 +33,18 @@ ekleBtn.onclick = function() {
     }else{
         ul.innerHTML += `<li>${dilInput.value}</li>`;
         dilInput.value = " ";
+        javascriptKontrol();
     }
 };
+
+const javascriptKontrol = () => {
+    document.querySelectorAll("ul li").forEach((dil) => {
+        const kucukHarf = dil.textContent.toLocaleLowerCase();
+        if(kucukHarf === "javascript"){
+            dil.className = "red";
+        }
+    });
+}
 
 
 
