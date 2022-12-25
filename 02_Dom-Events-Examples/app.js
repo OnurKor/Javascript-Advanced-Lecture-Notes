@@ -53,7 +53,7 @@ silBtn.onclick = function () {
 };
 
 dilInput.addEventListener("keydown", (e) => {
-  console.log(e);
+//   console.log(e);
 //   if (e.code === "Enter") {
 //     ekleBtn.onclick(); //! sadece click() yazsakta olur.
 //   }
@@ -64,3 +64,11 @@ dilInput.addEventListener("keydown", (e) => {
     silBtn.onclick();
   }
 });
+
+window.onload = () => {
+    javascriptKontrol();
+    dilInput.focus();
+};
+
+
+
