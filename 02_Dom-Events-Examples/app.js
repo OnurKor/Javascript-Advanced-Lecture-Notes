@@ -9,6 +9,9 @@ const dilSection = document.querySelector("#dil-section");
 const ul = document.createElement("ul");
 dilSection.appendChild(ul);
 
+
+//? SELECTORS
+//************************************************* */
 console.log(dilSection.children[0]);
 console.log(dilSection.parentNode);
 console.log(dilSection.parentNode.parentNode);
@@ -19,13 +22,14 @@ console.log(h1);
 
 h1.style.color = "red";
 
-
-//? SELECTORS
-//************************************************* */
-
-
-
 //?container class ı içerisindeki btn class'ına ait olan elementleri arar.
+const buttons = ul.closest(".container").querySelectorAll(".btn");
+console.log(buttons);
+
+
+
+
+
 
 
 //************************************************* */
