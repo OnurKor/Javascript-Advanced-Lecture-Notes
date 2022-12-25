@@ -1,14 +1,12 @@
-console.log('**** app.js *******');
+console.log("**** app.js *******");
 
 const dilInput = document.querySelector(".diller");
 const silBtn = document.getElementById("sil");
 const ekleBtn = document.getElementById("ekle");
 const dilSection = document.querySelector("#dil-section");
 
-
 const ul = document.createElement("ul");
 dilSection.appendChild(ul);
-
 
 //? SELECTORS
 //************************************************* */
@@ -27,34 +25,27 @@ const buttons = ul.closest(".container").querySelectorAll(".btn");
 console.log(buttons);
 //************************************************* */
 
-ekleBtn.onclick = function() {
-    if(!dilInput.value) {
-        alert("Lütfen bir dil giriniz")
-    }else{
-        ul.innerHTML += `<li>${dilInput.value}</li>`;
-        dilInput.value = " ";
-        javascriptKontrol();
-    };
+ekleBtn.onclick = function () {
+  if (!dilInput.value) {
+    alert("Lütfen bir dil giriniz");
+  } else {
+    ul.innerHTML += `<li>${dilInput.value}</li>`;
+    dilInput.value = " ";
+    javascriptKontrol();
+  }
 };
 
 const javascriptKontrol = () => {
-    document.querySelectorAll("ul li").forEach((dil) => {
-        const kucukHarf = dil.textContent.toLowerCase();
-        if(kucukHarf === "javascript"){
-            // dil.className = "red";
-            //? alternatif yöntem
-            dil.setAttribute("class", "red");
-        };
-    });
+  document.querySelectorAll("ul li").forEach((dil) => {
+    const kucukHarf = dil.textContent.toLowerCase();
+    if (kucukHarf === "javascript") {
+      // dil.className = "red";
+      //? alternatif yöntem
+      dil.setAttribute("class", "red");
+    }
+  });
 };
 
-
-
-
-
-
-
-
-
-
-
+dilInput.addEventListener("keydown", (e) => {
+  console.log(e);
+});
