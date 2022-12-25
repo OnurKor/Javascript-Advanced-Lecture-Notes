@@ -46,9 +46,21 @@ const javascriptKontrol = () => {
   });
 };
 
+silBtn.onclick = function () {
+  ul.childElementCount > 0
+    ? ul.removeChild(ul.lastElementChild)
+    : alert("Silinecek dil kalmadı.");
+};
+
 dilInput.addEventListener("keydown", (e) => {
   console.log(e);
-  if(e.code === "Enter"){
+//   if (e.code === "Enter") {
+//     ekleBtn.onclick(); //! sadece click() yazsakta olur.
+//   }
+  if (e.keyCode === 13) {
     ekleBtn.onclick(); //! sadece click() yazsakta olur.
-  };
+  }
+  if (e.code === "Delete") {
+    silBtn.onclick();
+  }
 });
