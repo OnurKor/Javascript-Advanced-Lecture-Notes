@@ -25,14 +25,23 @@ h1.style.color = "red";
 //?container class ı içerisindeki btn class'ına ait olan elementleri arar.
 const buttons = ul.closest(".container").querySelectorAll(".btn");
 console.log(buttons);
-
-
-
-
-
-
-
 //************************************************* */
+
+ekleBtn.onclick = function() {
+    if(!dilInput.value) {
+        alert("Lütfen bir dil giriniz")
+    }else{
+        ul.innerHTML += `<li>${dilInput.value}</li>`;
+        dilInput.value = " ";
+    }
+};
+
+
+
+
+
+
+
 
 
 
