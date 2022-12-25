@@ -48,4 +48,7 @@ const javascriptKontrol = () => {
 
 dilInput.addEventListener("keydown", (e) => {
   console.log(e);
+  if(e.code === "Enter"){
+    ekleBtn.click();
+  }
 });
