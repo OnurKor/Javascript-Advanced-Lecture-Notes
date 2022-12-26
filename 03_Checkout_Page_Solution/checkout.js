@@ -18,12 +18,22 @@ let productsDiv = document.querySelector(".products");
 
 productsDiv.addEventListener("click", (event) => {
   if (event.target.className == "minus") {
-    console.log("minus button clicked");
+    if (event.target.nextElementSibling.innerText > 1) {
+      event.target.nextElementSibling.innerText--;
+    }else{
+      if (confirm("Product will be deleted")) {
+        event.target.parentElement.parentElement.parentElement.remove();
+      }
+    }    
+    // console.log(typeof event.target.nextElementSibling.innerText);
+    // console.log("minus button clicked");
   } else if (event.target.classList.contains("plus")) {
+    event.target.previousElementSibling.innerText++;
     // console.log(event.target.classList);
-    console.log("plus button clicked");
+    // console.log("plus button clicked");
   } else if (event.target.classList.contains("remove-product")) {
-    console.log("remove button clicked");
+    event.target.parentElement.parentElement.parentElement.remove();
+    // console.log("remove button clicked");
   } else {
     console.log("other elements clicked");
   };
