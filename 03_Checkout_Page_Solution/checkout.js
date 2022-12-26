@@ -38,8 +38,10 @@ productsDiv.addEventListener("click", (event) => {
     // console.log(event.target.classList);
     // console.log("plus button clicked");
   } else if (event.target.classList.contains("remove-product")) {
-    event.target.parentElement.parentElement.parentElement.remove();
+    if (confirm("Product will be deleted")) {
+      event.target.parentElement.parentElement.parentElement.remove();
     calculateCartTotal();
+    }
     // console.log("remove button clicked");
   } else {
     console.log("other elements clicked");
@@ -74,7 +76,7 @@ const calculateCartTotal = () => {
   let taxPrice = subtotal * localStorage.getItem("taxRate");
   console.log(taxPrice);
 
-  let shippingPrice = parseFloat(localStorage.getItem("shippingPrice")); //? veya başına + koyarakta number'a çevirebiliriz.
+  let shippingPrice = (subtotal > 0 ? parseFloat(localStorage.getItem("shippingPrice")) : 0); //? veya başına + koyarakta number'a çevirebiliriz.
 
   let cartTotal = subtotal + taxPrice + shippingPrice;
 
