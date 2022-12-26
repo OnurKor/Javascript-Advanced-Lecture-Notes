@@ -50,8 +50,11 @@ productsDiv.addEventListener("click", (event) => {
 //? calculate cart and product totals
 const calculateProductAndCartTotal = (productInfoDiv) => {
   //! product calculation
-  let quantity = 
-  let price = 
+  console.log(productInfoDiv);
+  let quantity = productInfoDiv.querySelector("strong").innerText;
+  let price = productInfoDiv.querySelector("#product-quantity").innerText;
+  let productTotalDiv = productInfoDiv.querySelector(".product-line-price");
+  productTotalDiv.innerText = (price * quantity).toFixed(2);
 
   //! cart calculation
   calculateCartTotal();
