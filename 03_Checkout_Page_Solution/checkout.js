@@ -2,6 +2,7 @@
 // const shippingPrice = 15.0;
 
 window.addEventListener("load", () => {
+  calculateCartTotal();
   //?set item to LocalStorage => sürekli kalır biz silene kadar
   // localStorage.setItem("taxRate", taxRate);
   // localStorage.setItem("shippingPrice", shippingPrice);
