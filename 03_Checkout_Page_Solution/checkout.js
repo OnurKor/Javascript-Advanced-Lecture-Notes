@@ -1,11 +1,10 @@
-const taxRate = 0.18;
-const shippingPrice = 15.0;
+// const taxRate = 0.18;
+// const shippingPrice = 15.0;
 
 window.addEventListener("load", () => {
   //?set item to LocalStorage => sürekli kalır biz silene kadar
-  localStorage.setItem("taxRate", taxRate);
-  localStorage.setItem("shippingPrice", shippingPrice);
-
+  // localStorage.setItem("taxRate", taxRate);
+  // localStorage.setItem("shippingPrice", shippingPrice);
   //?set item to SessionStorage => sayfayı kapattıgımızda silinir.
   /*  sessionStorage.setItem("taxRate", taxRate);
   sessionStorage.setItem("shippingPrice", shippingPrice); */
@@ -50,7 +49,7 @@ productsDiv.addEventListener("click", (event) => {
 //? calculate cart and product totals
 const calculateProductAndCartTotal = (productInfoDiv) => {
   //! product calculation
-  console.log(productInfoDiv);
+  // console.log(productInfoDiv);
   let quantity = productInfoDiv.querySelector("strong").innerText;
   let price = productInfoDiv.querySelector("#product-quantity").innerText;
   let productTotalDiv = productInfoDiv.querySelector(".product-line-price");
@@ -61,4 +60,32 @@ const calculateProductAndCartTotal = (productInfoDiv) => {
 };
 
 //? calculate cart totals
-const calculateCartTotal = () => {};
+const calculateCartTotal = () => {
+  let productsTotalPriceDivs = document.querySelectorAll(".product-line-price");
+  // console.log(productsTotalPriceDivs);
+
+  let subtotal = 0;
+  productsTotalPriceDivs.forEach((eachProductTotalDiv) => {
+    subtotal += parseFloat(eachProductTotalDiv.innerText);
+  });
+  console.log(subtotal);
+
+  let taxPrice = subtotal * localStorage.getItem("taxRate");
+  console.log(taxPrice);
+
+  let shippingPrice = parseFloat(localStorage.getItem("shippingPrice")); //? veya başına + koyarakta number'a çevirebiliriz.
+
+  let cartTotal = subtotal + taxPrice + shippingPrice;
+
+  document.querySelector("#cart-subtotal p:nth-child(2)").innerText =
+    subtotal.toFixed(2);
+
+  document.querySelector("#cart-tax p:nth-child(2)").innerText =
+    taxPrice.toFixed(2);
+
+  document.querySelector("#cart-shipping p:nth-child(2)").innerText =
+    shippingPrice.toFixed(2);
+
+  document.querySelector("#cart-total").lastElementChild.innerText =
+    cartTotal.toFixed(2);
+};
