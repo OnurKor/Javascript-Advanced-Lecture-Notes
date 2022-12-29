@@ -33,7 +33,7 @@ btn.style.fontSize = "2rem";
 //*-------------------------------------------
 const img = document.getElementsByTagName("img");
 console.log(img);
-
+  
 img[0].style.border = "solid";
 img[0].style.borderColor = "red";
 img[0].style.transform = "rotate(-5deg)";
