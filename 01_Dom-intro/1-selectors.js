@@ -85,6 +85,6 @@ myPars1Array.forEach((p) => console.log(p.innerText));
 //! querySelector ile CSS vari seçim yapmak mümkündür.
 //! CSS Selector'lerin hepsini kullanmak mümkündür.
 
-console.log(document.querySelector("section p a"));
+// console.log(document.querySelector("section p a"));
 
 
