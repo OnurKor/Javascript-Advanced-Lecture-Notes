@@ -46,7 +46,7 @@ productsDiv.addEventListener("click", (event) => {
   } else {
     console.log("other elements clicked");
   }
-  // console.log(event.target);
+  console.log(event.target);
 });
 
 //? calculate cart and product totals
