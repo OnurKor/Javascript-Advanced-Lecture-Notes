@@ -8,7 +8,7 @@
 //? --------------------------------------------------------------
 //? Asenkron Programlama, bir alt gorevin uygulamanin asil thread'inden
 //? bagimsiz olarak arka planda calistirilmasina izin veren paralel programlama
-//? teknigidir. Bu alt gorev tamamlandiginda (basriyla veya basarisizlikla)
+//? teknigidir. Bu alt gorev tamamlandiginda (basariyla veya basarisizlikla)
 //? asil thread bu konuda bilgilendirilir. Asenkron programlama, uygulamalarin
 //? performansininin artirilmasina ve daha iyi kullanici deneyimine katki saglamaktadir.
 
@@ -18,6 +18,18 @@
 
 //* Senkron
 //* ---------------------------------------------------------------
+const bekle = (ms) => { //! blocking-code
+    const start = new Date().getTime();
+    while(new Date().getTime() < start +ms);
+};
+
+
+console.log("hello");
+// alert("FS"); //! blocking-code
+console.time("timer");
+bekle(3000)
+console.timeEnd("timer");
+console.log("FS11");
 
 
 
