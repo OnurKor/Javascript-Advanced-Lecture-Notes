@@ -18,29 +18,47 @@
 
 //* Senkron
 //* ---------------------------------------------------------------
-const bekle = (ms) => { //! blocking-code
-    const start = new Date().getTime();
-    while(new Date().getTime() < start +ms);
-};
+// const bekle = (ms) => { //! blocking-code
+//     const start = new Date().getTime();
+//     while(new Date().getTime() < start +ms);
+// };
 
 
-console.log("hello");
-// alert("FS"); //! blocking-code
-console.time("timer");
-bekle(3000)
-console.timeEnd("timer");
-console.log("FS11");
+// console.log("hello");
+// // alert("FS"); //! blocking-code
+// console.time("timer");
+// bekle(3000)
+// console.timeEnd("timer");
+// console.log("FS11");
 
 
 
 //* Asenkron (setTimeout)
 //* ---------------------------------------------------------------
+// //! macro task kuyruğu
+// setTimeout ( () => {
+//     //! non-blocking code
+//     console.log("Selam");
+// }, 1000);
 
+// //! micro task kuyruğu
+// console.log("Sana da selam");
+// console.log("merhaba");
+
+
+// setTimeout ( () => {
+//     //! non-blocking code
+//     console.log("Dostum naber?");
+// }, 500);
 
 
 //* Asenkron (setInterval, clearInterval)
 //*----------------------------------------------------------
+let counter = 0;
 
+setInterval( () => {
+console.log(++counter); 
+}, 1000)
 
 
 
