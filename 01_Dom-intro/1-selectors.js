@@ -76,6 +76,7 @@ const myPars1Array = Array.from(myPars1); //? Array.from ile diziye çevirilir.
 console.log(myPars1Array);
 myPars1Array.forEach((p) => console.log(p.innerText));
 
+
 //? 2.Spread/Rest
 
 [...myPars1].forEach((p) => console.log(p.innerText));
