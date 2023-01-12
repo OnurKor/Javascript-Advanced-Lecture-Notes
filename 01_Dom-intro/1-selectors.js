@@ -10,6 +10,7 @@ console.log('***** SELECTORS *****');
 
 //* EXAMPLE-1 (Paragraph Style)
 //*--------------------------------------------
+
 const header = document.getElementById("header");
 console.log(header);
 
