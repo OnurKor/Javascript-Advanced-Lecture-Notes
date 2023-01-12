@@ -18,6 +18,7 @@ header.style.color = "red";
 
 //* EXAMPLE-2 (Button Style)
 //*-------------------------------------------
+
 const button =document.getElementById("btn");
 console.log(button);
 btn.style.backgroundColor = "black";
