@@ -55,11 +55,18 @@
 //* Asenkron (setInterval, clearInterval)
 //*----------------------------------------------------------
 
-// let counter = 0;
+console.log("Counter Started");
+let counter = 0;
 
-// setInterval( () => {
-// console.log(++counter); 
-// }, 1000)
+const sec1 = setInterval( () => { //! non-blocking code
+console.log(++counter); 
+if (counter > 9) {
+    clearInterval(sec1);
+}
+}, 1000);
+
+console.log("Counter Finished");
+
 
 
 
