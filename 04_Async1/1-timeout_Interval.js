@@ -76,6 +76,18 @@ console.log("Counter Finished");
 //* yapisinin kullanilmasi gerekebilir. Fakta bu iyi bir programlama yaklasimi degildir.
 // !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
 
+setTimeout(() => {
+    console.log('john:Hi');
+    setTimeout(() => {
+      console.log('Sarah: Hello');
+      setTimeout(() => {
+        console.log('John: How Are you?');
+        setTimeout(() => {
+          console.log('Sarah:Fine and you?');
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
 
 
 
