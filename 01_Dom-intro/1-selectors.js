@@ -10,6 +10,7 @@ console.log('***** SELECTORS *****');
 
 //* EXAMPLE-1 (Paragraph Style)
 //*--------------------------------------------
+
 const header = document.getElementById("header");
 console.log(header);
 
@@ -18,6 +19,7 @@ header.style.color = "red";
 
 //* EXAMPLE-2 (Button Style)
 //*-------------------------------------------
+
 const button =document.getElementById("btn");
 console.log(button);
 btn.style.backgroundColor = "black";
@@ -75,6 +77,7 @@ console.log(myPars1); //? HTML Collection oldugu için array işlemleri yapamad�
 const myPars1Array = Array.from(myPars1); //? Array.from ile diziye çevirilir.
 console.log(myPars1Array);
 myPars1Array.forEach((p) => console.log(p.innerText));
+
 
 //? 2.Spread/Rest
 
