@@ -55,17 +55,17 @@
 //* Asenkron (setInterval, clearInterval)
 //*----------------------------------------------------------
 
-console.log("Counter Started");
-let counter = 0;
+// console.log("Counter Started");
+// let counter = 0;
 
-const sec1 = setInterval( () => { //! non-blocking code
-console.log(++counter); 
-if (counter > 9) {
-    clearInterval(sec1);
-}
-}, 1000);
+// const sec1 = setInterval( () => { //! non-blocking code
+// console.log(++counter); 
+// if (counter > 9) {
+//     clearInterval(sec1);
+// }
+// }, 1000);
 
-console.log("Counter Finished");
+// console.log("Counter Finished");
 
 
 
@@ -73,7 +73,7 @@ console.log("Counter Finished");
 //! Callback Hell (nested ve birbirine bagli callback'ler)
 //!-----------------------------------------------------------------
 //* Eger birbirine bagimli asenkron kodlarin yazilmasi gerekirse,nested callback
-//* yapisinin kullanilmasi gerekebilir. Fakta bu iyi bir programlama yaklasimi degildir.
+//* yapisinin kullanilmasi gerekebilir. Fakat bu iyi bir programlama yaklasimi degildir.
 // !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
 
 setTimeout(() => {
