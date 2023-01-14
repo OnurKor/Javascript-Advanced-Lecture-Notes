@@ -10,7 +10,18 @@
 //? fetch() fonksiyonu veri getirmek istediginiz kaynagin yolunu gosteren zorunlu
 //? bir parametre almaktadir ve bu istegin cevabini gosteren bir Promise dondurmektedir.
 
+let dataFromAPI;
+
 fetch("https://api.github.com/users")
-  .then((res) => res.json())
-  .then((data) => console.log(data))
+  .then((res) => {
+    //! error handling
+    if (!res.ok) {
+      throw new Error(`Something went wrong: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then((data) => {
+    dataFromAPI = data;
+    console.log(dataFromAPI);
+  })
   .catch((err) => console.log(err));
