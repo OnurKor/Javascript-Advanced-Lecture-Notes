@@ -30,19 +30,19 @@
 //? then() ve catch() metotlari promise dondururler.
 //? Zincirleme olarak kullanilabilirler.
 
-const myPromise = new Promise((resolve, reject) => {
-  let success = Math.floor(Math.random() * 5);
-  const data = { a: 1, b: 2 };
-  if (success) {
+// const myPromise = new Promise((resolve, reject) => {
+//   let success = Math.floor(Math.random() * 5);
+//   const data = { a: 1, b: 2 };
+//   if (success) {
 
-    resolve(data);
-    console.log("Task performed succesfully");
-  } else {
-    reject(new Error("Task failed"));
-  }
-});
+//     resolve(data);
+//     console.log("Task performed succesfully");
+//   } else {
+//     reject(new Error("Task failed"));
+//   }
+// });
 
-myPromise.then((res) => console.log(res)).catch((err) => console.log(err));
+// myPromise.then((res) => console.log(res)).catch((err) => console.log(err));
 
 //* Example-2: TEA TIME
 //* -----------------------------------------------------------------------
