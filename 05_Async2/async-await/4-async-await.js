@@ -19,18 +19,20 @@
 //* degerlerinin dondurulmesine ile kodun calismasi devam eder.
 
 const getUsers = async function () {
+  try {
     const res = await fetch("https://api.github.com/users");
-    if(!res.ok) {
-        throw new Error(`Something went wrong: ${res.status}`)
+    if (!res.ok) {
+      throw new Error(`Something went wrong: ${res.status}`);
     }
 
     const data = await res.json();
     updateDom(data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 getUsers();
-
-
 
 fetch("https://api.github.com/users")
   .then((res) => {
