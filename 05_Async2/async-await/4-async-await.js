@@ -17,3 +17,29 @@
 //* Await, promise-temelli herhangi bir fonksiyonun onune getirilerek getirildigi
 //* satirdaki kodun durudurulmasini saglar. Yapilan istek yerine getirilip sonuc
 //* degerlerinin dondurulmesine ile kodun calismasi devam eder.
+
+// fetch("https://api.github.com/users")
+//   .then((res) => {
+//     //! error handling
+//     if (!res.ok) {
+//       throw new Error(`Something went wrong: ${res.status}`);
+//     }
+//     return res.json();
+//   })
+//   .then((data) => updateDom(data))
+//   .catch((err) => console.log(err));
+
+// const updateDom = (data) => {
+//   const userDiv = document.querySelector(".users");
+
+//   data.forEach((user) => {
+//     //! destructuring
+//     const { login, avatar_url, html_url } = user;
+//     userDiv.innerHTML += `
+//         <h2 class="text-primary"><span class="text-black">NAME: </span>${login}</h2>
+//         <img src=${avatar_url} width="50%" alt=""/>
+//         <h3>HTML_URL: ${html_url}</h3>
+//         <h4>LOGIN: ${login}</h4>
+//         `;
+//   });
+// };
