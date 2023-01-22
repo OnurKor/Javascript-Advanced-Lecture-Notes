@@ -18,10 +18,13 @@
 //* satirdaki kodun durudurulmasini saglar. Yapilan istek yerine getirilip sonuc
 //* degerlerinin dondurulmesine ile kodun calismasi devam eder.
 
+let error = false;
+
 const getUsers = async function () {
   try {
     const res = await fetch("https://api.github.com/users");
     if (!res.ok) {
+        error = true;
       throw new Error(`Something went wrong: ${res.status}`);
     }
 
@@ -36,7 +39,9 @@ getUsers();
 
 const updateDom = (data) => {
   const userDiv = document.querySelector(".users");
-
+if(error){
+    userDiv.innerHTML = `<h1>Data can not be fetched</h1>`;
+}
   data.forEach((user) => {
     //! destructuring
     const { login, avatar_url, html_url } = user;
